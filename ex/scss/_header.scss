@@ -1,0 +1,59 @@
+#header {
+    @include tab {
+        position: absolute;
+        margin: 5vw 0 0 6.4vw;
+    }
+    @include sp {
+        width: 90%;
+        margin: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header-list {
+    width: 65vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .list-text {
+        font-size: 1.6vw;
+        color: #707070;
+        z-index: 4;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            // width: 100%;
+            height: 1px;
+            color: #000000;
+            background: #000000;
+            z-index: -1;
+            transition: all 0.4s;
+        }
+        @include sp {
+        display: none;
+        }
+    }
+}
+
+.header-list {
+    .list-text:hover {
+        color: #000000;
+        transition: all 0.4s;
+        &:after {
+            width: 100%;
+        }
+    }
+}
+
+.header-title {
+    font-size: 3.5vw;
+    @include sp {
+        font-size: 6vw;
+    }
+}
